@@ -1,0 +1,588 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+/* From Uiverse.io by gharsh11032000 */ 
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color:  #00aaff;
+    box-shadow: 0 0 0 2px  #00aaff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #00aaff;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+  
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color:  #00aaff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #212121;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px  #00aaff;
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+body {
+   
+    background-color: #121212;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+/* Header Navigation */
+header {
+    background: #181818;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #00aaff;
+}
+
+/* Mobile Menu Button */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+/* From Uiverse.io by vinodjangid07 */ 
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 80px 20px 40px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #00aaff;
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #00aaff;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-bottom: 15px;
+}
+
+/* Call to Action Text */
+.cta-text {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.cta-text a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.cta-text a:hover {
+    text-decoration: underline;
+    color: #0088cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #181818;
+        position: absolute;
+        width: 100%;
+        top: 55px;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.skills-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-content ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skills-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #00aaff;
+    font-size: 20px;
+}
+/* Education Section */
+.education {
+    margin-top: 100px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.education h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.edu-box {
+    background: #181818;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.edu-info h3 {
+    font-size: 24px;
+    color: #00aaff;
+    margin-bottom: 10px;
+}
+
+.edu-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+/* Projects Section */
+.projects {
+    margin-top: 100px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.project-box {
+    background: #181818;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-box h3 {
+    font-size: 24px;
+    color: #00aaff;
+    margin-bottom: 10px;
+}
+
+.project-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+/* NCC Section */
+.ncc {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.ncc-photo img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 3px solid #00aaff;
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+}
+
+.ncc-container {
+    background: #181818;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ncc-list {
+    list-style-type: none;
+    text-align: left;
+    padding: 0;
+}
+
+.ncc-list li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.ncc-list li::before {
+    content: "•";
+    color: #00aaff;
+    position: absolute;
+    left: 0;
+    font-size: 22px;
+    top: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ncc-container {
+        padding: 15px;
+    }
+}
+/nter;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: 50px auto; /* Center the section */
+    background: #181818;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact h2 {
+    color: #00aaff;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Contact Links */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+/* Individual Contact Item */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #252525;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+    max-width: 350px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-item img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Hover Effect */
+.contact-item:hover {
+    background: #00aaff;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .contact-item {
+        width: 90%;
+    }
+}
+/* Assignments Section */
+.assignments {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 50px auto;
+    background: #181818;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.assignments h2 {
+    color: #00aaff;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.assignments p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Assignment List */
+.assignment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual Assignment Item */
+.assignment-item {
+    display: flex;
+    align-items: center;
+    background: #252525;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    transition: transform 0.2s ease;
+    gap: 15px;
+}
+
+.assignment-item:hover {
+    transform: scale(1.02);
+}
+
+/* Assignment Image */
+.assignment-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #00aaff;
+}
+
+/* Assignment Info */
+.assignment-info {
+    flex: 1;
+    text-align: left;
+}
+
+.assignment-info h3 {
+    color: #00aaff;
+    font-size: 22px;
+}
+
+.assignment-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.view-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    background: #ff9800;
+    color: white;
+}
+
+.view-btn:hover {
+    transform: scale(1.05);
+}
+/* Individual Assignment Item */
+.assignment-item {
+    display: flex;
+    align-items: center;
+    background: #252525;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+    gap: 15px;
+}
+
+/* Hover Effect */
+.assignment-item:hover {
+    background: #00aaff;
+    transform: scale(1.05);
+}
